@@ -80,12 +80,12 @@ class App extends Component {
     const {score, gameState, userChoice, opponentChoice, result} = this.state
 
     return (
-      <div className='app-container'>
+      <div className="app-container">
         <h1>Rock Paper Scissors</h1>
         <p>Score</p>
-        <p className='score'>{score}</p>
+        <p className="score">{score}</p>
         {gameState === 'PLAYING' ? (
-          <div className='choices-container'>
+          <div className="choices-container">
             {choicesList.map(choice => (
               <button
                 key={choice.id}
@@ -97,18 +97,18 @@ class App extends Component {
             ))}
           </div>
         ) : (
-          <div className='result-container'>
+          <div className="result-container">
             <p>{result}</p>
-            <div className='choices-result'>
+            <div className="choices-result">
               <img
                 src={userChoice.imageUrl}
-                alt='your choice'
-                data-testid='yourChoice'
+                alt="your choice"
+                data-testid="yourChoice"
               />
               <img
                 src={opponentChoice.imageUrl}
-                alt='opponent choice'
-                data-testid='opponentChoice'
+                alt="opponent choice"
+                data-testid="opponentChoice"
               />
             </div>
             <button onClick={this.handlePlayAgain}>PLAY AGAIN</button>
@@ -117,21 +117,21 @@ class App extends Component {
 
         <Popup
           modal
-          trigger={<button type='button'>Rules</button>}
-          className='popup-content'
+          trigger={<button type="button">Rules</button>}
+          className="popup-content"
         >
           {close => (
             <>
-              <div className='rules-image-container'>
+              <div className="rules-image-container">
                 <img
-                  src='https://assets.ccbp.in/frontend/react-js/rock-paper-scissor/rules-image.png'
-                  alt='rules'
+                  src="https://assets.ccbp.in/frontend/react-js/rock-paper-scissor/rules-image.png"
+                  alt="rules"
                 />
               </div>
               <button
-                type='button'
-                className='close-button'
-                data-testid='closeButton'
+                type="button"
+                className="close-button"
+                data-testid="closeButton"
                 onClick={close}
               >
                 <RiCloseLine />
